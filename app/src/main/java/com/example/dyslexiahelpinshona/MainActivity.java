@@ -1,6 +1,8 @@
 package com.example.dyslexiahelpinshona;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,41 +11,55 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static  int SLASH_SCREEN=3000;
+    RecyclerView recyclerView;
+    LinearLayoutManager layoutManager;
+    List<Category> categoryList;
+    Adapter adapter;
 
-    //Variables
-    Animation topAnim, bottomAnim;
-    ImageView image;
-    TextView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        //Animations
-        topAnim = AnimationUtils.loadAnimation(this,R.anim.top_animation);
-        bottomAnim= AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
+        initData();
+        initRecyclerView();
+
+
+    }
+
+    private void initData() {
+        categoryList = new ArrayList<>();
+        categoryList.add(new Category(R.drawable.alphabet,"Arufabheti"));
+        categoryList.add(new Category(R.drawable.vowels2,"Nzvovera"));
+        categoryList.add(new Category(R.drawable.consonants,"Nzvanyira"));
+        categoryList.add(new Category(R.drawable.consonants,"Chisazitasingwi"));
+        categoryList.add(new Category(R.drawable.consonants,"Chiito"));
+        categoryList.add(new Category(R.drawable.consonants,"Pazita"));
+        categoryList.add(new Category(R.drawable.consonants,"Chipauro"));
+
+    }
+
+    private void initRecyclerView() {
 
         //Hooks
-        image=findViewById(R.id.imageView);
-        logo = findViewById(R.id.textView);
+        recyclerView = findViewById(R.id.recyclerView);
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new Adapter (categoryList);
+        adapter.notifyDataSetChanged();
+        recyclerView.setAdapter(adapter);
 
-        image.setAnimation(bottomAnim);
-        logo.setAnimation(topAnim);
-
-        new Handler().postDelayed (new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(MainActivity.this,Dashboard.class);
-                startActivity(intent);
-                finish();
-            }
-        }, SLASH_SCREEN);
     }
+
 }
+
