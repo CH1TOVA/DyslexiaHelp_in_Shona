@@ -22,10 +22,10 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_marginTop="150dp"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/open_dyslexic_bold"
         android:text="Dyslexia Help"
         android:textAlignment="center"
         android:textColor="@color/black"

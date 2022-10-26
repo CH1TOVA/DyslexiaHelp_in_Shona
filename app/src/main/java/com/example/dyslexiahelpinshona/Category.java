@@ -1,24 +1,72 @@
 package com.example.dyslexiahelpinshona;
 
+import java.util.ArrayList;
+
 public class Category {
+    ArrayList<Thing> things;
+    int currentIndex=0;
+    String title;
+    int image;
+    int highscore;
+    int color;
+    int theme;
+    String columnName;
+    int quizImage;
 
-    private final int imageview1;
-    private final String textview1;
-
-    public Category(int imageview1, String textview1) {
-        this.imageview1 = imageview1;
-        this.textview1 = textview1;
-
+    public Category(String title, int image,int highscore,int color,int theme, String columnName, int quizImage ) {
+        this.title = title;
+        this.image = image;
+        this.highscore=highscore;
+        this.color=color;
+        this.theme=theme;
+        this.columnName=columnName;
+        this.quizImage=quizImage;
+        this.things=new ArrayList<>();
     }
 
-    public int getImageview1() {
-        return imageview1;
+    public String getTitle() {
+        return title;
     }
 
-    public String getTextview1() {
-        return textview1;
+    public int getImage() {
+        return image;
     }
 
+    public void addThing(Thing thing){
+        things.add(thing);
+    }
 
+    public ArrayList<Thing> getListOfThings(){
+        return this.things;
+    }
+
+    public Thing nextThing() {
+        return things.get(++currentIndex);
+    }
+
+    public Thing prevThing() {
+        return things.get(--currentIndex);
+    }
+
+    public Thing currentThing() {
+        return things.get(currentIndex);
+    }
+
+    boolean hasNextThing(){
+        return currentIndex < things.size()-1;
+    }
+
+    boolean hasPrevThing(){
+        return currentIndex > 0;
+    }
+
+    public void goToFirstThing(){
+        currentIndex=0;
+    }
+
+    public void updateHighscore(){ this.highscore = Highscores.getHighscore(this.columnName);
+    }
 
 }
+
+

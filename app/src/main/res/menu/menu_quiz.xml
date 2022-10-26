@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/quiz_title"
+        android:icon="@drawable/ic_face_white"
+        android:title="Quizzes"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/quiz_alphabet"
+                android:title="Arufabheti" />
+            <item
+                android:id="@+id/quiz_vowels"
+                android:title="Nzvovera" />
+            <item
+                android:id="@+id/quiz_consonants"
+                android:title="Nzvanyira" />
+            <item
+                android:id="@+id/quiz_verbs"
+                android:title="Chiito" />
+            <item
+                android:id="@+id/quiz_adjectives"
+                android:title="Chipauro" />
+
+            <item
+                android:id="@+id/quiz_nouns"
+                android:title="Pazita" />
+            <item
+                android:id="@+id/quiz_pronouns"
+                android:title="Chisazitasingwi" />
+
+        </menu>
+    </item>
+
+</menu>
