@@ -225,7 +225,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     private void updateHighscores() {
         Highscores.open(this);
         for (Category c : categoryList) {
-            c.updateHighscore();
+            int score = Highscores.getHighscore(c.columnName);
+             c.setHighscore(score);
         }
         Highscores.close();
         // notifies the adapter to display the latest Highscores

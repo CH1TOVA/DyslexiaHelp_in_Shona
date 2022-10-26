@@ -64,7 +64,12 @@ public class Category {
         currentIndex=0;
     }
 
-    public void updateHighscore(){ this.highscore = Highscores.getHighscore(this.columnName);
+    public int  getHighscore()
+    {
+        return highscore;
+    }
+    public void setHighscore(int score){
+        this.highscore=score;
     }
 
 }

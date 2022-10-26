@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,9 +39,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         int resource= categoryList.get(position).getImage();
         String name= categoryList.get(position).getTitle();
+        int score = categoryList.get(position).getHighscore();
 
 
-        holder.setData(resource,name);
+        holder.setData(resource,name,score);
     }
 
     @Override
@@ -52,12 +55,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         ImageView imageView;
         TextView textView;
+        TextView categoryHighscore;
 
 
         public ViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
             imageView= itemView.findViewById(R.id.card_image);
             textView= itemView.findViewById(R.id.card_title);
+            categoryHighscore = itemView.findViewById(R.id.card_highscore);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -74,10 +79,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         }
 
-        public void setData(int resource, String name) {
+        public void setData(int resource, String name, int score) {
 
             imageView.setImageResource(resource);
             textView.setText(name);
+            categoryHighscore.setText("Maki Hombesa: " + String.valueOf(score));
 
         }
 

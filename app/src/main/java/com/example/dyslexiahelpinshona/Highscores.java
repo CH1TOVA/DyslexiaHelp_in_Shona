@@ -33,6 +33,7 @@ public class Highscores {
     }
 
     public static List<Integer> getAllHighscores() {
+
         Cursor cursor = database.query(MySQLiteHelper.TABLE_HIGHSCORES, all_columns, null, null, null, null, null);
         cursor.moveToFirst();
         List<Integer> highscores = new ArrayList<>();
