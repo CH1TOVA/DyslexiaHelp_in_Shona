@@ -11,7 +11,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            app:cardBackgroundColor="@color/colorAccent"
+            app:cardBackgroundColor="@color/blue_icons"
             app:cardCornerRadius="10dp">
 
             <RelativeLayout
@@ -32,7 +32,7 @@
                     android:layout_height="40dp"
                     android:text="Arufabheti"
                     android:textSize="25sp"
-                    android:textColor="@color/icons"
+                    android:textColor="@color/colorPrimaryDark"
                     android:layout_toRightOf="@+id/card_image"
                     android:paddingTop="5dp" />
 
@@ -44,7 +44,7 @@
                     android:layout_toRightOf="@+id/card_image"
                     android:layout_below="@+id/card_title"
                     android:paddingTop="10dp"
-                    android:textColor="@color/icons"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="15sp" />
 
 

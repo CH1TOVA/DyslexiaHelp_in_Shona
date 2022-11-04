@@ -22,6 +22,8 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
     private ImageView quizButton;
     private LottieAnimationView lottie;
     private TextView mainName;
+    private TextView smallChar;
+    private TextView catName;
     private ImageButton audioButton;
     private RelativeLayout relativeLayout;
     private MediaPlayer mediaPlayer;
@@ -43,13 +45,15 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mainName = (TextView) findViewById(R.id.thingName);
-        lottie = (LottieAnimationView) findViewById(R.id.thingImage);
-        rightButton = (ImageButton) findViewById(R.id.buttonRightThing);
-        leftButton = (ImageButton) findViewById(R.id.buttonLeftThing);
-        audioButton = (ImageButton) findViewById(R.id.buttonAudioThing);
-        relativeLayout = (RelativeLayout) findViewById(R.id.thingLayout);
-        quizButton = (ImageView) findViewById(R.id.buttonQuiz);
+        mainName = findViewById(R.id.thingName);
+        smallChar = findViewById(R.id.smallChar);
+        catName = findViewById(R.id.catName);
+        lottie = findViewById(R.id.thingImage);
+        rightButton = findViewById(R.id.buttonRightThing);
+        leftButton = findViewById(R.id.buttonLeftThing);
+        audioButton = findViewById(R.id.buttonAudioThing);
+        relativeLayout = findViewById(R.id.thingLayout);
+        quizButton = findViewById(R.id.buttonQuiz);
 
         rightButton.setOnClickListener(this);
         leftButton.setOnClickListener(this);
@@ -149,6 +153,8 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
         lottie.setBackgroundColor(primaryLightColor);
         relativeLayout.setBackgroundColor(primaryLightColor);
         mainName.setBackgroundColor(primaryLightColor);
+        smallChar.setBackgroundColor(primaryLightColor);
+        catName.setBackgroundColor(primaryLightColor);
         setTitle(currentCategory.title);
 
         // make the picture Invisible and then Visible to add some animation
@@ -157,6 +163,8 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
         lottie.setVisibility(View.VISIBLE);
         quizButton.setImageResource(currentCategory.quizImage);
         mainName.setText(currentThing.getText());
+        smallChar.setText(currentThing.getText2());
+        catName.setText(currentThing.getText3());
 
         rightButton.setVisibility(currentCategory.hasNextThing() ? View.VISIBLE : View.INVISIBLE);
         leftButton.setVisibility(currentCategory.hasPrevThing() ? View.VISIBLE : View.INVISIBLE);

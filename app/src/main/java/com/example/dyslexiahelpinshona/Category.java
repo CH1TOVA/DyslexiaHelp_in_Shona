@@ -68,6 +68,7 @@ public class Category {
     {
         return highscore;
     }
+
     public void setHighscore(int score){
         this.highscore=score;
     }

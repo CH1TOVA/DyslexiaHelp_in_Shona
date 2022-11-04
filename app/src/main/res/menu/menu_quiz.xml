@@ -12,24 +12,24 @@
                 android:id="@+id/quiz_alphabet"
                 android:title="Arufabheti" />
             <item
-                android:id="@+id/quiz_vowels"
-                android:title="Nzvovera" />
-            <item
-                android:id="@+id/quiz_consonants"
-                android:title="Nzvanyira" />
+                android:id="@+id/quiz_numbers"
+                android:title="Manhamba" />
             <item
                 android:id="@+id/quiz_verbs"
                 android:title="Chiito" />
             <item
-                android:id="@+id/quiz_adjectives"
-                android:title="Chipauro" />
+                android:id="@+id/quiz_animals"
+                android:title="Mhuka" />
+            <item
+                android:id="@+id/quiz_professions"
+                android:title="Mabasa" />
 
             <item
-                android:id="@+id/quiz_nouns"
-                android:title="Pazita" />
+                android:id="@+id/quiz_colors"
+                android:title="Ruvara" />
             <item
-                android:id="@+id/quiz_pronouns"
-                android:title="Chisazitasingwi" />
+                android:id="@+id/quiz_relations"
+                android:title="Ukama" />
 
         </menu>
     </item>

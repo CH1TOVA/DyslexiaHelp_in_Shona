@@ -14,7 +14,7 @@
         android:layout_height="400dp"
         android:layout_above="@+id/thingName"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="100dp"
         android:background="@color/primary_light"
         android:scaleType="centerInside"
         app:lottie_rawRes="@raw/letter_a"
@@ -22,6 +22,35 @@
         app:lottie_loop="true"/>
 
 
+    <TextView
+        android:id="@+id/smallChar"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_above="@+id/catName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/primary_light"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="varamwana: a "
+        android:textColor="@color/primary_text"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/catName"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_above="@+id/thingName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/primary_light"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="mupanda: nzvanyira  "
+        android:textColor="@color/primary_text"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/thingName"
@@ -33,10 +62,11 @@
         android:background="@color/primary_light"
         android:gravity="center"
         android:padding="15dp"
-        android:text="a"
+        android:text="[aa]"
         android:textColor="@color/primary_text"
         android:textSize="40sp"
         android:textStyle="bold" />
+
 
     <ImageButton
         android:id="@+id/buttonAudioThing"

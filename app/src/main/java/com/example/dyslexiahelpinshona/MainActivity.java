@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Makategori");
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.pink_primary)));
-        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.pink_primary_dark));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.pink_them)));
+        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,R.color.pink_them));
 
         categoryList= new ArrayList<>();
         populateCategoriesList();
@@ -68,27 +68,27 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
                 intent.putExtra("position", 0);
                 startActivity(intent);
                 return true;
-            case R.id.quiz_vowels:
+            case R.id.quiz_numbers:
                 intent.putExtra("position", 1);
                 startActivity(intent);
                 return true;
-            case R.id.quiz_consonants:
+            case R.id.quiz_verbs:
                 intent.putExtra("position", 2);
                 startActivity(intent);
                 return true;
-            case R.id.quiz_verbs:
+            case R.id.quiz_animals:
                 intent.putExtra("position", 3);
                 startActivity(intent);
                 return true;
-            case R.id.quiz_adjectives:
+            case R.id.quiz_professions:
                 intent.putExtra("position", 4);
                 startActivity(intent);
                 return true;
-            case R.id.quiz_nouns:
+            case R.id.quiz_colors:
                 intent.putExtra("position", 5);
                 startActivity(intent);
                 return true;
-            case R.id.quiz_pronouns:
+            case R.id.quiz_relations:
                 intent.putExtra("position", 6);
                 startActivity(intent);
                 return true;
@@ -107,128 +107,145 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
                 R.style.GreenTheme,
                 MySQLiteHelper.COLUMN_ALPHABET,
                 R.drawable.ic_face_green);
-        Category vowelsCategory = new Category("Nzvovera",
-                R.drawable.vowels2,
-                Highscores.getHighscore(MySQLiteHelper.COLUMN_VOWELS),
+        Category numbersCategory = new Category("Nhamba",
+                R.drawable.numbers,
+                Highscores.getHighscore(MySQLiteHelper.COLUMN_NUMBERS),
                 getResources().getColor(R.color.blue_primary_dark),
                 R.style.BlueTheme,
-                MySQLiteHelper.COLUMN_VOWELS,
+                MySQLiteHelper.COLUMN_NUMBERS,
                 R.drawable.ic_face_blue);
-        Category consonantsCategory = new Category("Nzvanyira",
-                R.drawable.consonants,
-                Highscores.getHighscore(MySQLiteHelper.COLUMN_CONSONANTS),
-                getResources().getColor(R.color.pink_primary_dark),
-                R.style.PinkTheme,
-                MySQLiteHelper.COLUMN_CONSONANTS,
-                R.drawable.ic_face_pink);
         Category verbCategory = new Category("Chiito",
-                R.drawable.alphabet,
-                Highscores.getHighscore(MySQLiteHelper.COLUMN_VERB),
+                R.drawable.verb,
+                Highscores.getHighscore(MySQLiteHelper.COLUMN_VERBS),
                 getResources().getColor(R.color.purple_primary_dark),
                 R.style.PurpleTheme,
-                MySQLiteHelper.COLUMN_VERB,
+                MySQLiteHelper.COLUMN_VERBS,
                 R.drawable.ic_face_purple);
-        Category adjectiveCategory = new Category("Chipauro",
-                R.drawable.vowels2,
-                Highscores.getHighscore(MySQLiteHelper.COLUMN_ADJECTIVE),
+        Category animalsCategory = new Category("Mhuka",
+                R.drawable.animals,
+                Highscores.getHighscore(MySQLiteHelper.COLUMN_ANIMALS),
                 getResources().getColor(R.color.primary_dark),
                 R.style.GreenTheme,
-                MySQLiteHelper.COLUMN_ADJECTIVE,
+                MySQLiteHelper.COLUMN_ANIMALS,
                 R.drawable.ic_face_green);
-        Category nounCategory = new Category("Pazita",
-                R.drawable.consonants,
-                Highscores.getHighscore(MySQLiteHelper.COLUMN_NOUN),
-                getResources().getColor(R.color.blue_primary_dark),
-                R.style.BlueTheme,
-                MySQLiteHelper.COLUMN_NOUN,
-                R.drawable.ic_face_blue);
-        Category pronounCategory = new Category("Sazitasingwi",
-                R.drawable.alphabet,
-                Highscores.getHighscore(MySQLiteHelper.COLUMN_PRONOUN),
+        Category professionCategory = new Category("Mabasa",
+                R.drawable.professions,
+                Highscores.getHighscore(MySQLiteHelper.COLUMN_PROFESSIONS),
                 getResources().getColor(R.color.pink_primary_dark),
                 R.style.PinkTheme,
-                MySQLiteHelper.COLUMN_PRONOUN,
+                MySQLiteHelper.COLUMN_PROFESSIONS,
                 R.drawable.ic_face_pink);
+        Category colorCategory = new Category("Ruvara",
+                R.drawable.colors,
+                Highscores.getHighscore(MySQLiteHelper.COLUMN_COLORS),
+                getResources().getColor(R.color.blue_primary_dark),
+                R.style.BlueTheme,
+                MySQLiteHelper.COLUMN_COLORS,
+                R.drawable.ic_face_blue);
+        Category relationsCategory = new Category("Hukama",
+                R.drawable.relations,
+                Highscores.getHighscore(MySQLiteHelper.COLUMN_RELATIONS),
+                getResources().getColor(R.color.purple_primary_dark),
+                R.style.PurpleTheme,
+                MySQLiteHelper.COLUMN_RELATIONS,
+                R.drawable.ic_face_purple);
         Highscores.close();
 
-        alphabetCategory.addThing(new Thing(R.raw.alphabt_a, R.raw.a, "a"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_b, R.raw.b, "b"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_c, R.raw.c, "c"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_d, R.raw.d, "d"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_e, R.raw.e, "e"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_f, R.raw.d, "f"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_g, R.raw.d, "g"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_h, R.raw.d, "h"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_i, R.raw.i, "i"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_j, R.raw.d, "j"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_k, R.raw.i, "k"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_l, R.raw.o, "l"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_m, R.raw.u, "m"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_n, R.raw.u, "n"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_o, R.raw.u, "o"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_p, R.raw.u, "p"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_q, R.raw.u, "q"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_r, R.raw.u, "r"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_s, R.raw.u, "s"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_t, R.raw.u, "t"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_u, R.raw.u, "u"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_v, R.raw.u, "v"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_w, R.raw.u, "w"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_x, R.raw.u, "x"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_y, R.raw.u, "y"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_z, R.raw.u, "z"));
+        alphabetCategory.addThing(new Thing(R.raw.alphabt_a, R.raw.a_sound, "[aa]","varamwana: a", "mupanda : nzvovera" ));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_b, R.raw.b_sound, "[bee]", "varamwana: b", "mupanda: nzvanyira"));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_c, R.raw.non_existent, "haiko", "varamwana: c", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_d, R.raw.d_sound, "[dee]" , "varamwana: d", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_e, R.raw.e_sound, "[ee]", "varamwana: e", "mupanda:nzvovera "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_f, R.raw.f_sound, "[fee]", "varamwana: f", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_g, R.raw.g_sound, "[gee]", "varamwana: g", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_h, R.raw.h_sound, "[hee]", "varamwana: h", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_i, R.raw.i_sound, "[ii]", "varamwana: i", "mupanda:nzvovera "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_j, R.raw.j_sound, "[jee]", "varamwana: j", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_k, R.raw.k_sound, "[kee]", "varamwana: k", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_l, R.raw.non_existent, "haiko", "varamwana: l", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_m, R.raw.m_sound, "[mi]", "varamwana: m", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_n, R.raw.n_sound, "[ni]", "varamwana: n", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_o, R.raw.o_sound, "[oo]", "varamwana: o", "mupanda:nzvovera "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_p, R.raw.p_sound, "[pi]", "varamwana: p", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_q, R.raw.non_existent, "haiko", "varamwana: q", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_r, R.raw.r_sound, "[rw]", "varamwana: r", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_s, R.raw.s_sound, "[see]", "varamwana: s", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_t, R.raw.t_sound, "[ti]", "varamwana: t", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_u, R.raw.u_sound, "[uu]", "varamwana: u", "mupanda:nzvovera "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_v, R.raw.v_sound, "[vi]", "varamwana: v", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_w, R.raw.w_sound, "[wee]", "varamwana: w", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_x, R.raw.non_existent, "haiko", "varamwana: x", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_y, R.raw.y_sound, "[yuh]", "varamwana: y", "mupanda:nzvanyira "));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_z, R.raw.z_sound, "[zee]", "varamwana: z", "mupanda:nzvanyira "));
+
+        numbersCategory.addThing(new Thing(R.raw.number_1pr, R.raw.sound_1, "potsi", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_2, R.raw.sound_2, "piri", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_3, R.raw.sound_3, "tatu", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_4, R.raw.sound_4, "ina", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_5, R.raw.sound_5, "shanu", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_6, R.raw.sound_6, "nhanhatu", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_7, R.raw.sound_7, "nomwe", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_8, R.raw.sound_8, "sere", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_9, R.raw.sound_9, "pfumbamwe", null, null));
+        numbersCategory.addThing(new Thing(R.raw.number_10, R.raw.sound_10, "gumi", null, null));
 
 
-        vowelsCategory.addThing(new Thing(R.raw.alphabt_a, R.raw.a, "a [aa]"));
-        vowelsCategory.addThing(new Thing(R.raw.alphabet_e, R.raw.e, "e [ee]"));
-        vowelsCategory.addThing(new Thing(R.raw.alphabet_i, R.raw.i, "i [ie]"));
-        vowelsCategory.addThing(new Thing(R.raw.alphabet_o, R.raw.o, "o [oo]"));
-        vowelsCategory.addThing(new Thing(R.raw.alphabet_u, R.raw.u, "u [uu]"));
 
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_b, R.raw.b, "b"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_c, R.raw.c, "c"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_d, R.raw.d, "d"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_f, R.raw.d, "f"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_g, R.raw.d, "g"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_h, R.raw.d, "h"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_j, R.raw.d, "j"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_k, R.raw.d, "k"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_l, R.raw.d, "l"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_m, R.raw.d, "m"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_n, R.raw.d, "n"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_p, R.raw.d, "p"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_q, R.raw.d, "q"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_r, R.raw.d, "r"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_s, R.raw.d, "s"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_t, R.raw.d, "t"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_v, R.raw.d, "v"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_w, R.raw.d, "w"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_x, R.raw.d, "x"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_y, R.raw.d, "y"));
-        consonantsCategory.addThing(new Thing(R.raw.alphabet_z, R.raw.d, "z"));
+        verbCategory.addThing(new Thing(R.raw.running_boy, R.raw.run_sound, "mhanya", null, null));
+        verbCategory.addThing(new Thing(R.raw.jumping, R.raw.jump_sound, "svetuka", null, null));
+        verbCategory.addThing(new Thing(R.raw.walk, R.raw.walk_sound, "famba", null, null));
+        verbCategory.addThing(new Thing(R.raw.morty_cry, R.raw.cry_sound, "chema",null, null));
+        verbCategory.addThing(new Thing(R.raw.swimming, R.raw.swim_sound, "dhidha",null, null));
+        verbCategory.addThing(new Thing(R.raw.skipping, R.raw.skip_sound, "tomhuka", null, null));
+        verbCategory.addThing(new Thing(R.raw.drinking, R.raw.drink_sound, "kumwa", null, null));
+        verbCategory.addThing(new Thing(R.raw.playing_music, R.raw.music_sound, "ridza", null, null));
+        verbCategory.addThing(new Thing(R.raw.paint, R.raw.paint_sound, "penda", null, null));
+        verbCategory.addThing(new Thing(R.raw.writing, R.raw.write_sound, "nyora", null, null));
+        verbCategory.addThing(new Thing(R.raw.cycling, R.raw.cycling_sound, "chovha", null, null));
+        verbCategory.addThing(new Thing(R.raw.carry, R.raw.carry_sound, "takura", null, null));
+        verbCategory.addThing(new Thing(R.raw.dance, R.raw.dance_sound, "tamba",null, null));
+        verbCategory.addThing(new Thing(R.raw.applause, R.raw.applause_sound, "uchira",null, null));
 
-        verbCategory.addThing(new Thing(R.raw.running_boy, R.raw.a, "mhanya"));
-        verbCategory.addThing(new Thing(R.raw.jumping, R.raw.a, "svetuka"));
-        verbCategory.addThing(new Thing(R.raw.walk, R.raw.a, "famba"));
-        verbCategory.addThing(new Thing(R.raw.morty_cry, R.raw.a, "chema"));
-        verbCategory.addThing(new Thing(R.raw.swimming, R.raw.a, "dhidha"));
-        verbCategory.addThing(new Thing(R.raw.skipping_rope, R.raw.a, "tomhuka"));
-        verbCategory.addThing(new Thing(R.raw.drinking, R.raw.a, "kumwa"));
-        verbCategory.addThing(new Thing(R.raw.playing_music, R.raw.a, "ridza"));
-        verbCategory.addThing(new Thing(R.raw.paint, R.raw.a, "penda"));
-        verbCategory.addThing(new Thing(R.raw.writing, R.raw.a, "nyora"));
-        verbCategory.addThing(new Thing(R.raw.cycling, R.raw.a, "chovha"));
-        verbCategory.addThing(new Thing(R.raw.carry, R.raw.a, "takura"));
-        verbCategory.addThing(new Thing(R.raw.dance, R.raw.a, "tamba"));
+        animalsCategory.addThing(new Thing(R.raw.cow, R.raw.cow_sound, "mombe", null, null));
+        animalsCategory.addThing(new Thing(R.raw.toucan_bird, R.raw.bird_sound, "shiri", null, null));
+        animalsCategory.addThing(new Thing(R.raw.lion, R.raw.lion_sound, "shumba", null, null));
+        animalsCategory.addThing(new Thing(R.raw.bat, R.raw.bat_sound, "chiremwa", null, null));
+        animalsCategory.addThing(new Thing(R.raw.bulldog, R.raw.dog_sound, "imbwa", null, null));
+        animalsCategory.addThing(new Thing(R.raw.butterfly, R.raw.butterfly_sound, "shavishavi", null, null));
+        animalsCategory.addThing(new Thing(R.raw.cat, R.raw.cat_sound, "kitsi", null, null));
+        animalsCategory.addThing(new Thing(R.raw.chicken, R.raw.chicken_sound, "huku", null, null));
+        animalsCategory.addThing(new Thing(R.raw.crocodile, R.raw.crocodile_sound, "garwe", null, null));
+        animalsCategory.addThing(new Thing(R.raw.dance_monkey, R.raw.monkey_sound, "tsoko", null, null));
+        animalsCategory.addThing(new Thing(R.raw.duck, R.raw.duck_sound, "dhadha", null, null));
+        animalsCategory.addThing(new Thing(R.raw.elephant, R.raw.nzou_sound, "nzou", null, null));
+        animalsCategory.addThing(new Thing(R.raw.fish, R.raw.hove_sound, "hove", null, null));
+        animalsCategory.addThing(new Thing(R.raw.horse, R.raw.horse_sound, "bhiza", null, null));
+        animalsCategory.addThing(new Thing(R.raw.pig, R.raw.pig_sound, "nguruve", null, null));
+        animalsCategory.addThing(new Thing(R.raw.rabbit, R.raw.rabbit_sound, "tsuro", null, null));
+        animalsCategory.addThing(new Thing(R.raw.tiger, R.raw.ingwe_sound, "ingwe", null, null));
+
+
+        professionCategory.addThing(new Thing(R.raw.doctor, R.raw.doctor_sound, "chiremba", null, null));
+        professionCategory.addThing(new Thing(R.raw.pilot, R.raw.pilot_sound, "mutyairi", null, null));
+        professionCategory.addThing(new Thing(R.raw.fishermen, R.raw.fisherman_sound, "murauri", null, null));
+
+        colorCategory.addThing(new Thing(R.raw.black, R.raw.black_sound, "tema", null, null));
+        colorCategory.addThing(new Thing(R.raw.yellow, R.raw.yellow_sound, "yero", null, null));
+        colorCategory.addThing(new Thing(R.raw.red, R.raw.red_sound, "tsvuku", null, null));
+
+        relationsCategory.addThing(new Thing(R.raw.family, R.raw.family_sound, "mhuri", null, null));
+        relationsCategory.addThing(new Thing(R.raw.mother_baby, R.raw.mother_sound, "amai", null, null));
+        relationsCategory.addThing(new Thing(R.raw.grandmother, R.raw.granny_sound, "mbuya","amai vemubereki wako", null));
+
 
 
         categoryList.add(alphabetCategory);
-        categoryList.add(vowelsCategory);
-        categoryList.add(consonantsCategory);
+        categoryList.add(numbersCategory);
         categoryList.add(verbCategory);
-        categoryList.add(adjectiveCategory);
-        categoryList.add(nounCategory);
-        categoryList.add(pronounCategory);
+        categoryList.add(animalsCategory);
+        categoryList.add(professionCategory);
+        categoryList.add(colorCategory);
+        categoryList.add(relationsCategory);
     }
 
     private void initRecyclerView() {

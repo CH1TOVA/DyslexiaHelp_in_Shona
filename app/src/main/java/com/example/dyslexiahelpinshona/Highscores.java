@@ -13,14 +13,14 @@ public class Highscores {
 
     private static SQLiteDatabase database;
     private static MySQLiteHelper dbHelper;
-    private static String[] all_columns = {
+    private static final String[] all_columns = {
             MySQLiteHelper.COLUMN_ALPHABET,
-            MySQLiteHelper.COLUMN_VOWELS,
-            MySQLiteHelper.COLUMN_CONSONANTS,
-            MySQLiteHelper.COLUMN_VERB,
-            MySQLiteHelper.COLUMN_NOUN,
-            MySQLiteHelper.COLUMN_ADJECTIVE,
-            MySQLiteHelper.COLUMN_PRONOUN
+            MySQLiteHelper.COLUMN_NUMBERS,
+            MySQLiteHelper.COLUMN_VERBS,
+            MySQLiteHelper.COLUMN_ANIMALS,
+            MySQLiteHelper.COLUMN_PROFESSIONS,
+            MySQLiteHelper.COLUMN_COLORS,
+            MySQLiteHelper.COLUMN_RELATIONS
     };
 
     public static void open(Context context) throws SQLException {
@@ -33,7 +33,6 @@ public class Highscores {
     }
 
     public static List<Integer> getAllHighscores() {
-
         Cursor cursor = database.query(MySQLiteHelper.TABLE_HIGHSCORES, all_columns, null, null, null, null, null);
         cursor.moveToFirst();
         List<Integer> highscores = new ArrayList<>();

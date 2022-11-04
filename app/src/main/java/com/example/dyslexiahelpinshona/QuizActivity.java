@@ -59,13 +59,13 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().setTitle("Mibvunzo");
 
         things = currentCategory.getListOfThings();
-        relativeLayout = (RelativeLayout) findViewById(R.id.quizLayout);
-        lottie = (LottieAnimationView) findViewById(R.id.quizImage);
-        answer1 = (RadioButton) findViewById(R.id.answer1);
-        answer2 = (RadioButton) findViewById(R.id.answer2);
-        answer3 = (RadioButton) findViewById(R.id.answer3);
-        scoreTextView = (TextView) findViewById(R.id.scoreCounter);
-        questionTextView = (TextView) findViewById(R.id.questionCounter);
+        relativeLayout = findViewById(R.id.quizLayout);
+        lottie = findViewById(R.id.quizImage);
+        answer1 = findViewById(R.id.answer1);
+        answer2 = findViewById(R.id.answer2);
+        answer3 = findViewById(R.id.answer3);
+        scoreTextView = findViewById(R.id.scoreCounter);
+        questionTextView = findViewById(R.id.questionCounter);
 
         answer1.setOnClickListener(this);
         answer2.setOnClickListener(this);

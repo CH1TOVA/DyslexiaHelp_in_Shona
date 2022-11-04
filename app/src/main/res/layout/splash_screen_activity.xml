@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@drawable/gradient2"
     tools:context=".SplashScreen">
 
 
@@ -28,7 +28,7 @@
         android:fontFamily="@font/open_dyslexic_bold"
         android:text="Dyslexia Help"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/blue_icons"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
