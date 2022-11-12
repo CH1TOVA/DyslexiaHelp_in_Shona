@@ -10,16 +10,16 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 
+import java.util.Objects;
+
 public class ThingsActivity extends AppCompatActivity implements View.OnClickListener{
     private ImageButton rightButton;
     private ImageButton leftButton;
-    private ImageView quizButton;
     private LottieAnimationView lottie;
     private TextView mainName;
     private TextView smallChar;
@@ -28,14 +28,14 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
     private RelativeLayout relativeLayout;
     private MediaPlayer mediaPlayer;
     Thing currentThing;
-    Category currentCategory;
+    LearnCategories currentCategory;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();//return the intent that started this activity
         int position = intent.getIntExtra("position", 0);
-        currentCategory = MainActivity.categoryList.get(position);
+        currentCategory = MainActivity.learncategoryList.get(position);
         currentCategory.goToFirstThing();
         setTheme(currentCategory.theme);
 
@@ -43,7 +43,7 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_things);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         mainName = findViewById(R.id.thingName);
         smallChar = findViewById(R.id.smallChar);
@@ -53,13 +53,12 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
         leftButton = findViewById(R.id.buttonLeftThing);
         audioButton = findViewById(R.id.buttonAudioThing);
         relativeLayout = findViewById(R.id.thingLayout);
-        quizButton = findViewById(R.id.buttonQuiz);
+
 
         rightButton.setOnClickListener(this);
         leftButton.setOnClickListener(this);
         audioButton.setOnClickListener(this);
         lottie.setOnClickListener(this);
-        quizButton.setOnClickListener(this);
 
         currentThing = currentCategory.currentThing();
         updateResources();
@@ -107,13 +106,6 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
                     playSound(currentThing.getNoise());
                 }
                 break;
-            case R.id.buttonQuiz:
-                Intent previousIntent = getIntent();
-                int position = previousIntent.getIntExtra("position", 0);
-                Intent intent = new Intent(this, QuizActivity.class);
-                intent.putExtra("position", position);
-                startActivity(intent);
-                break;
         }
     }
 
@@ -121,7 +113,7 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
     /**
      * Plays the appropriate sound/noise for the current thing and
      * updates the UI (button color & text, background color etc.) based on the
-     * current Category and Thing
+     * current QuizCategories and Thing
      */
     protected void updateResources() {
         if (currentThing.hasNoise()) {
@@ -161,13 +153,13 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
         lottie.setVisibility(View.INVISIBLE);
         lottie.setAnimation(currentThing.getLottieAnimationView());
         lottie.setVisibility(View.VISIBLE);
-        quizButton.setImageResource(currentCategory.quizImage);
         mainName.setText(currentThing.getText());
         smallChar.setText(currentThing.getText2());
         catName.setText(currentThing.getText3());
 
         rightButton.setVisibility(currentCategory.hasNextThing() ? View.VISIBLE : View.INVISIBLE);
         leftButton.setVisibility(currentCategory.hasPrevThing() ? View.VISIBLE : View.INVISIBLE);
+
     }
 
     private void setButtonColor(ImageButton button, int color) {

@@ -45,7 +45,7 @@ public class ImageAdapter extends BaseAdapter {
         return 0;
     }
 
-    //create a new ImageView for each item referenced by the adapter
+    //create a new ImageView for each item referenced by the learnAdapter
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {

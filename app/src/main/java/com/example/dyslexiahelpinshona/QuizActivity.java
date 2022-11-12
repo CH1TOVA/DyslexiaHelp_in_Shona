@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,14 +27,14 @@ import java.util.Set;
 
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Category currentCategory;
-    ArrayList<Thing> things;
+    QuizCategories currentQuizCategories;
+    ArrayList<QuizQuestion> quizQuestions;
     private LottieAnimationView lottie;
     private RelativeLayout relativeLayout;
     private RadioButton answer1;
     private RadioButton answer2;
     private RadioButton answer3;
-    private Thing thingAnswer;
+    private QuizQuestion quizAnswer;
     private TextView questionTextView;
     private TextView scoreTextView;
     private MediaPlayer mediaPlayer;
@@ -50,15 +49,15 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();//return the intent that started this activity
         int position = intent.getIntExtra("position", 0);
-        currentCategory = MainActivity.categoryList.get(position);
-        setTheme(currentCategory.theme);
+        currentQuizCategories = QuizCategoriesActivity.quizCategoriesList.get(position);
+        setTheme(currentQuizCategories.theme);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);// back button
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);// back button
         getSupportActionBar().setTitle("Mibvunzo");
 
-        things = currentCategory.getListOfThings();
+        quizQuestions = currentQuizCategories.getListOfQuizzes();
         relativeLayout = findViewById(R.id.quizLayout);
         lottie = findViewById(R.id.quizImage);
         answer1 = findViewById(R.id.answer1);
@@ -111,7 +110,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         } else if (questionNumber > 10) {
             this.finish();
             Highscores.open(this);
-            if (Highscores.setHighscore(currentCategory.columnName, score))
+            if (Highscores.setHighscore(currentQuizCategories.columnName, score))
                 Toast.makeText(this, "Chibodzwa Chihombesa!", Toast.LENGTH_LONG).show();
             Highscores.close();
             return;
@@ -126,22 +125,20 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         lottie.setBackgroundColor(primaryLightColor);
         relativeLayout.setBackgroundColor(primaryLightColor);
 
-        Random r = new Random();
+        Random random = new Random();
         Set<Integer> set = new HashSet<>();
         while (set.size() < 3) {
-            set.add(r.nextInt(things.size()));
-        }
-        // three random Thing indexes. e.g., [2, 6, 9] which may represent:
-        // [A, E, F]
+            set.add(random.nextInt(quizQuestions.size())); }
+        // three random QuizQuestion indexes. e.g., [2, 6, 9] which may represent: [B, E, F]
         Integer[] answers = set.toArray(new Integer[set.size()]);
-        // indexes [0, 1 , 2] to randomly fetch the Thing indexes:
+        // indexes [0, 1 , 2] to randomly fetch the QuizQuestion indexes:
         ArrayList<Integer> indexes = new ArrayList<>(Arrays.asList(0, 1, 2));
-        //a random index to set the picture question:
-        int index = indexes.get(r.nextInt(indexes.size()));
-        thingAnswer = things.get(answers[index]);
+        //set the animation question:
+        for (int index = 0; index < indexes.size(); index++){
+        quizAnswer = quizQuestions.get(answers[index]);}
 
         lottie.setVisibility(View.INVISIBLE);
-        lottie.setAnimation(thingAnswer.getLottieAnimationView());
+        lottie.setAnimation(quizAnswer.getLottieAnimationView());
         lottie.setVisibility(View.VISIBLE);
 
         setRandomAnswer(answer1, indexes, answers);
@@ -159,16 +156,15 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         // e.g., remove the index 1 so it won't appear two times as answer
         indexes.remove(Integer.valueOf(index));
         // indexes = [0, 2]
-        button.setText(things.get(answers[index]).getText());
+        button.setText(quizQuestions.get(answers[index]).getText());
     }
-
 
     @Override
     public void onClick(final View v) {
         if (v instanceof RadioButton) {
-            if (((RadioButton) v).getText() == thingAnswer.getText()) {
+            if (((RadioButton) v).getText() == quizAnswer.getText()) {
                 score++;
-                scoreTextView.setText("Score: " + score);
+                scoreTextView.setText("Zvibodzwa: " + score);
                 playSound(true);
             } else {
                 playSound(false);

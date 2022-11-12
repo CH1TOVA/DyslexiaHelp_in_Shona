@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 import java.util.Random;
 
 public class PuzzleActivity extends AppCompatActivity {
@@ -39,6 +40,7 @@ public class PuzzleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle);
         getSupportActionBar().setTitle("Tsoro");
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);// back button
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.pink_them)));
         getWindow().setStatusBarColor(ContextCompat.getColor(PuzzleActivity.this,R.color.pink_them));
 
@@ -72,6 +74,13 @@ public class PuzzleActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public boolean onSupportNavigateUp() {
+        // closes the Activity when the back button on the action bar is pressed
+        finish();
+        return true;
+    }
+
     private void setPicFromAsset(String assetName, ImageView imageView) {
         // Get the dimensions of the View
         int targetW = imageView.getWidth();

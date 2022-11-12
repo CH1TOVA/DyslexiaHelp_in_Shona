@@ -13,6 +13,7 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class PuzzleImagesActivity extends AppCompatActivity {
 
@@ -21,6 +22,7 @@ public class PuzzleImagesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_puzzle_images);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);// back button
         getSupportActionBar().setTitle("Tsoro");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.pink_them)));
         getWindow().setStatusBarColor(ContextCompat.getColor(PuzzleImagesActivity.this,R.color.pink_them));
@@ -43,5 +45,11 @@ public class PuzzleImagesActivity extends AppCompatActivity {
         } catch (IOException e) {
             Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        // closes the Activity when the back button on the action bar is pressed
+        finish();
+        return true;
     }
 }

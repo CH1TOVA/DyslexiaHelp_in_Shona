@@ -25,46 +25,43 @@
     <TextView
         android:id="@+id/smallChar"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/catName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
         android:background="@color/primary_light"
         android:gravity="center"
-        android:padding="15dp"
         android:text="varamwana: a "
         android:textColor="@color/primary_text"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/catName"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/thingName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
         android:background="@color/primary_light"
         android:gravity="center"
-        android:padding="15dp"
         android:text="mupanda: nzvanyira  "
         android:textColor="@color/primary_text"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/thingName"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_above="@+id/buttonAudioThing"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
         android:background="@color/primary_light"
         android:gravity="center"
-        android:padding="15dp"
         android:text="[aa]"
         android:textColor="@color/primary_text"
-        android:textSize="40sp"
+        android:textSize="33sp"
         android:textStyle="bold" />
 
 
@@ -88,7 +85,7 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="85dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="2dp"
         android:background="@drawable/buttonshape"
@@ -103,23 +100,12 @@
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="85dp"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/buttonshape"
         android:elevation="30dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_leftarrow" />
-
-    <ImageView
-        android:id="@+id/buttonQuiz"
-        android:layout_width="75dp"
-        android:layout_height="65dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_face_white" />
 
 </RelativeLayout>

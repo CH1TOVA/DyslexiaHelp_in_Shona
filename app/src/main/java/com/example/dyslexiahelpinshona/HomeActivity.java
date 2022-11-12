@@ -52,21 +52,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent i;
+        Intent intent;
         switch(v.getId()){
             case R.id.learn_card:
-                i = new Intent(this,MainActivity.class);
-                startActivity(i);
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.quiz_card:
-                i= new Intent(this, QuizCategories.class);
-                startActivity(i);
+                intent= new Intent(this, QuizCategoriesActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.puzzle_card:
-                i= new Intent(this, PuzzleImagesActivity.class);
-                startActivity(i);
+                intent= new Intent(this, PuzzleImagesActivity.class);
+                startActivity(intent);
                 break;
 
         }

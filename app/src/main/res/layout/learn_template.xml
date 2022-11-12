@@ -28,25 +28,15 @@
 
                 <TextView
                     android:id="@+id/card_title"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:text="Arufabheti"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
                     android:textSize="25sp"
                     android:textColor="@color/colorPrimaryDark"
                     android:layout_toRightOf="@+id/card_image"
                     android:paddingTop="5dp" />
-
-                <TextView
-                    android:id="@+id/card_highscore"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text = "Maki Hombesa:"
-                    android:layout_toRightOf="@+id/card_image"
-                    android:layout_below="@+id/card_title"
-                    android:paddingTop="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="15sp" />
-
 
             </RelativeLayout>
 

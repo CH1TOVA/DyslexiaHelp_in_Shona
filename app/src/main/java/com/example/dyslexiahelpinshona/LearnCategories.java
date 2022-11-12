@@ -2,25 +2,17 @@ package com.example.dyslexiahelpinshona;
 
 import java.util.ArrayList;
 
-public class Category {
+public class LearnCategories {
     ArrayList<Thing> things;
     int currentIndex=0;
     String title;
     int image;
-    int highscore;
-    int color;
     int theme;
-    String columnName;
-    int quizImage;
 
-    public Category(String title, int image,int highscore,int color,int theme, String columnName, int quizImage ) {
+    public LearnCategories(String title, int image,int theme) {
         this.title = title;
         this.image = image;
-        this.highscore=highscore;
-        this.color=color;
         this.theme=theme;
-        this.columnName=columnName;
-        this.quizImage=quizImage;
         this.things=new ArrayList<>();
     }
 
@@ -64,15 +56,5 @@ public class Category {
         currentIndex=0;
     }
 
-    public int  getHighscore()
-    {
-        return highscore;
-    }
-
-    public void setHighscore(int score){
-        this.highscore=score;
-    }
-
 }
-
 

@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.ViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
-    private ArrayList<Category> categoryList;
+    private ArrayList<QuizCategories> quizCategoriesList;
 
-    public QuizAdapter (ArrayList<Category>categoryList, RecyclerViewInterface recyclerViewInterface)
+    public QuizAdapter (ArrayList<QuizCategories> quizCategoriesList, RecyclerViewInterface recyclerViewInterface)
     {
-        this.categoryList=categoryList;
+        this.quizCategoriesList = quizCategoriesList;
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
@@ -26,15 +26,15 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.ViewHolder> {
     public QuizAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.quiz_template,parent,false);
-        QuizAdapter.ViewHolder viewHolder = new QuizAdapter.ViewHolder(view, recyclerViewInterface);
+        ViewHolder viewHolder = new ViewHolder(view, recyclerViewInterface);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull QuizAdapter.ViewHolder holder, int position) {
-        int resource= categoryList.get(position).getImage();
-        String name= categoryList.get(position).getTitle();
-        int score = categoryList.get(position).getHighscore();
+        int resource= quizCategoriesList.get(position).getImage();
+        String name= quizCategoriesList.get(position).getTitle();
+        int score = quizCategoriesList.get(position).getHighscore();
 
 
         holder.setData(resource,name,score);
@@ -42,7 +42,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return categoryList.size();
+        return quizCategoriesList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -52,9 +52,9 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.card_image);
-            textView = itemView.findViewById(R.id.card_title);
-            categoryHighscore = itemView.findViewById(R.id.card_highscore);
+            imageView = itemView.findViewById(R.id.cardquiz_image);
+            textView = itemView.findViewById(R.id.cardquiz_title);
+            categoryHighscore = itemView.findViewById(R.id.cardquiz_highscore);
 
             itemView.setOnClickListener(v -> {
                 if(recyclerViewInterface!=null){

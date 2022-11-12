@@ -9,10 +9,10 @@
 
     <androidx.cardview.widget.CardView
         android:id = "@+id/learn_card"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
         android:layout_marginRight="10dp"
         app:cardBackgroundColor="@color/blue_icons"
         app:cardCornerRadius="30dp">
@@ -26,14 +26,14 @@
                 android:id = "@+id/learn_image"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
-                android:src="@drawable/alphabet"
+                android:src="@drawable/learn_icon"
                 android:padding="5dp" />
 
             <TextView
                 android:id="@+id/learn_title"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="Dzidzo"
+                android:text="Dzidziso"
                 android:textSize="25sp"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/open_dyslexic_bold"
@@ -47,9 +47,9 @@
 
     <androidx.cardview.widget.CardView
         android:id = "@+id/quiz_card"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="10dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/learn_card"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
@@ -65,7 +65,7 @@
                 android:id = "@+id/quiz_image"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
-                android:src="@drawable/alphabet"
+                android:src="@drawable/quiz_icon"
                 android:padding="5dp" />
 
             <TextView
@@ -87,9 +87,9 @@
 
     <androidx.cardview.widget.CardView
         android:id = "@+id/puzzle_card"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="10dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/quiz_card"
         android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
@@ -105,7 +105,7 @@
                 android:id = "@+id/puzzle_image"
                 android:layout_width="120dp"
                 android:layout_height="100dp"
-                android:src="@drawable/alphabet"
+                android:src="@drawable/puzzle_icon"
                 android:padding="5dp" />
 
             <TextView
@@ -124,5 +124,39 @@
 
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:id = "@+id/home_icon"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/home_icon"
+        android:layout_marginTop="0dp" />
+
+    <ImageView
+        android:id = "@+id/bball"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/bball"
+        android:paddingTop="5dp"
+        android:layout_below="@+id/puzzle_card"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageView
+        android:id = "@+id/plane"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/plane"
+        android:paddingTop="5dp"
+        android:layout_below="@+id/puzzle_card"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"/>
+
+    <ImageView
+        android:id = "@+id/book"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/book"
+        android:paddingTop="5dp"
+        android:layout_below="@+id/puzzle_card"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>
