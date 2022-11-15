@@ -19,6 +19,7 @@ import com.airbnb.lottie.LottieAnimationView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -107,7 +108,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         // if the quiz has just started
         if (questionNumber == 1) {
             scoreTextView.setText("Zvibodzwa: " + 0);
-        } else if (questionNumber > 10) {
+        } else if (questionNumber > 9) {
             this.finish();
             Highscores.open(this);
             if (Highscores.setHighscore(currentQuizCategories.columnName, score))
@@ -128,15 +129,27 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         Random random = new Random();
         Set<Integer> set = new HashSet<>();
         while (set.size() < 3) {
-            set.add(random.nextInt(quizQuestions.size())); }
+            set.add(random.nextInt(quizQuestions.size()));
+        }
         // three random QuizQuestion indexes. e.g., [2, 6, 9] which may represent: [B, E, F]
         Integer[] answers = set.toArray(new Integer[set.size()]);
         // indexes [0, 1 , 2] to randomly fetch the QuizQuestion indexes:
         ArrayList<Integer> indexes = new ArrayList<>(Arrays.asList(0, 1, 2));
-        //set the animation question:
-        for (int index = 0; index < indexes.size(); index++){
-        quizAnswer = quizQuestions.get(answers[index]);}
+//        set the animation question:
+      for (int i = 0; i < indexes.size(); i++) {
+          quizAnswer = quizQuestions.get(answers[i]);
+          indexes.remove(quizQuestions);
+      }
 
+//        }
+        //a random index to set the animation question:
+//        int index = indexes.get(random.nextInt(indexes.size()));
+        //indexes.remove(quizQuestions.get(index));
+
+//       quizAnswer = quizQuestions.get(answers[index]);
+//          indexes.remove(quizQuestions.get(index));
+//        set.remove(random.nextInt(quizQuestions.size()));
+//
         lottie.setVisibility(View.INVISIBLE);
         lottie.setAnimation(quizAnswer.getLottieAnimationView());
         lottie.setVisibility(View.VISIBLE);
@@ -215,7 +228,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         correctSounds.add(R.raw.correct2);
         correctSounds.add(R.raw.correct3);
         correctSounds.add(R.raw.correct4);
-        correctSounds.add(R.raw.correct5);
         Random rand = new Random();
 
         return correctSounds.get(rand.nextInt(correctSounds.size()));

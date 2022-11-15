@@ -93,35 +93,33 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         numbersCategory.addThing(new Thing(R.raw.number_3, R.raw.sound_3, "tatu", null, "nhamba yechi-tatu"));
         numbersCategory.addThing(new Thing(R.raw.number_4, R.raw.sound_4, "ina", null, "nhamba yech-ina"));
         numbersCategory.addThing(new Thing(R.raw.number_5, R.raw.sound_5, "shanu", null, "nhamba yechi-shanu"));
-        numbersCategory.addThing(new Thing(R.raw.number_6, R.raw.sound_6, "nhanhatu", null, "nhamba yechi-tanhatu"));
+        numbersCategory.addThing(new Thing(R.raw.number_6, R.raw.sound_6, "tanhatu", null, "nhamba yechi-tanhatu"));
         numbersCategory.addThing(new Thing(R.raw.number_7, R.raw.sound_7, "nomwe", null, "nhamba yechi-nomwe"));
         numbersCategory.addThing(new Thing(R.raw.number_8, R.raw.sound_8, "sere", null, "nhamba yechi-sere"));
         numbersCategory.addThing(new Thing(R.raw.number_9, R.raw.sound_9, "pfumbamwe", null, "nhamba ye-pfumbamwe"));
         numbersCategory.addThing(new Thing(R.raw.number_10, R.raw.sound_10, "gumi", null, "nhamba ye-gumi"));
 
 
-
         verbCategory.addThing(new Thing(R.raw.running_boy, R.raw.run_sound, "mhanya", "dudzirachiito:", "ku-mhanya, ano-mhanya"));
-        verbCategory.addThing(new Thing(R.raw.jumping, R.raw.jump_sound, "svetuka", "dudzirachiito:", "ku-svetuka, va-svetuka"));
-        verbCategory.addThing(new Thing(R.raw.walk, R.raw.walk_sound, "famba", "dudzirachiito:", "ku-famba, va-kafamba"));
+        verbCategory.addThing(new Thing(R.raw.jumping, R.raw.jump_sound, "svetuka", "dudzirachiito:", "ku-svetuka, ano-svetuka"));
+        verbCategory.addThing(new Thing(R.raw.walk, R.raw.walk_sound, "famba", "dudzirachiito:", "ku-famba, vaka-famba"));
         verbCategory.addThing(new Thing(R.raw.morty_cry, R.raw.cry_sound, "chema","dudzirachiito:", "ku-chema, aka-chema"));
-        verbCategory.addThing(new Thing(R.raw.swimming, R.raw.swim_sound, "dhidha","dudzirachiito:", "ku-dhidha, ku-nodhidha"));
+        verbCategory.addThing(new Thing(R.raw.swimming, R.raw.swim_sound, "dhidha","dudzirachiito:", "ku-dhidha, aka-dhidha"));
         verbCategory.addThing(new Thing(R.raw.skipping, R.raw.skip_sound, "tomhuka", "dudzirachiito:","ku-tomhuka, a-tomhuka" ));
         verbCategory.addThing(new Thing(R.raw.drinking, R.raw.drink_sound, "imwa", "dudzirachiito:", "ku-mwa, aka-mwa"));
-        verbCategory.addThing(new Thing(R.raw.playing_music, R.raw.music_sound, "ridza", "dudzirachiito:", "a-ridza, ano-ridza"));
-        verbCategory.addThing(new Thing(R.raw.paint, R.raw.paint_sound, "penda", "dudzirachiito:", "a-penda, aka-penda"));
+        verbCategory.addThing(new Thing(R.raw.playing_music, R.raw.music_sound, "ridza", "dudzirachiito:", "ku-ridza, ano-ridza"));
+        verbCategory.addThing(new Thing(R.raw.paint, R.raw.paint_sound, "penda", "dudzirachiito:", "ku-penda, aka-penda"));
         verbCategory.addThing(new Thing(R.raw.writing, R.raw.write_sound, "nyora", "dudzirachiito:", "ku-nyora, aka-nyora"));
         verbCategory.addThing(new Thing(R.raw.cycling, R.raw.cycling_sound, "chovha", "dudzirachiito:", "ku-chovha, aka-chovha"));
-        verbCategory.addThing(new Thing(R.raw.carry, R.raw.carry_sound, "takura", "dudzirachiito:", "aka-takura"));
-        verbCategory.addThing(new Thing(R.raw.dance, R.raw.dance_sound, "tamba","dudzirachiito:", "ano-tamba, vaka-tamba"));
-        verbCategory.addThing(new Thing(R.raw.applause, R.raw.applause_sound, "uchira","dudzirachiito:", "vau-chira, au-chira"));
+        verbCategory.addThing(new Thing(R.raw.carry, R.raw.carry_sound, "takura", "dudzirachiito:", "ku-takura, aka-takura"));
+        verbCategory.addThing(new Thing(R.raw.dance, R.raw.dance_sound, "tamba","dudzirachiito:", "ku-tamba, vaka-tamba"));
+        verbCategory.addThing(new Thing(R.raw.applause, R.raw.applause_sound, "ombera","dudzirachiito:", "ku-ombera, va-ombera"));
 
         animalsCategory.addThing(new Thing(R.raw.cow, R.raw.cow_sound, "mombe", "mwana wemombe: ", "mhuru"));
         animalsCategory.addThing(new Thing(R.raw.toucan_bird, R.raw.bird_sound, "shiri", "mwana weshiri: ", "nyana"));
         animalsCategory.addThing(new Thing(R.raw.lion, R.raw.lion_sound, "shumba", "mwana weshumba: ", "handa"));
-        animalsCategory.addThing(new Thing(R.raw.bat, R.raw.bat_sound, "chiremwaremwa","mwana wechiremwaremwa:" , "nyana"));
+        animalsCategory.addThing(new Thing(R.raw.bat, R.raw.bat_sound, "chiremwa","mwana wechiremwaremwa:" , "nyana"));
         animalsCategory.addThing(new Thing(R.raw.bulldog, R.raw.dog_sound, "imbwa", "mwana wembwa: ", "mbwanana"));
-        animalsCategory.addThing(new Thing(R.raw.butterfly, R.raw.butterfly_sound, "shavishavi", null, "rinobhuruka"));
         animalsCategory.addThing(new Thing(R.raw.cat, R.raw.cat_sound, "kitsi", "mwana wekitsi:", "chidharimbo"));
         animalsCategory.addThing(new Thing(R.raw.chicken, R.raw.chicken_sound, "huku", "mwana wehuku: ", "chitiyo"));
         animalsCategory.addThing(new Thing(R.raw.crocodile, R.raw.crocodile_sound, "garwe", "mwana wegarwe: ", "ganyamatope" ));
@@ -135,12 +133,12 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         animalsCategory.addThing(new Thing(R.raw.rabbit, R.raw.rabbit_sound, "tsuro", "mwwana wetsuro: ", "nhowa"));
 
         professionCategory.addThing(new Thing(R.raw.doctor, R.raw.doctor_sound, "chiremba", null, "munhu anorapa"));
-        professionCategory.addThing(new Thing(R.raw.pilot, R.raw.pilot_sound, "mutyairi", null, "mutyairi wendege"));
         professionCategory.addThing(new Thing(R.raw.fishermen, R.raw.fisherman_sound, "murauri", null, "munhu anoraura hove"));
-        professionCategory.addThing(new Thing(R.raw.teacher, R.raw.fisherman_sound, "mudzidzisi", null, "munhu anodzidzisa"));
-        professionCategory.addThing(new Thing(R.raw.chef, R.raw.fisherman_sound, "mubiki", null, "munhu anobika chikafu"));
-        professionCategory.addThing(new Thing(R.raw.cut, R.raw.fisherman_sound, "muvezi", null, "munhu anoveza mapuranga"));
-        professionCategory.addThing(new Thing(R.raw.playing_music, R.raw.fisherman_sound, "muimbi", null, "munhu anoimba"));
+        professionCategory.addThing(new Thing(R.raw.teacher, R.raw.teacher_sound, "mudzidzisi", null, "munhu anodzidzisa"));
+        professionCategory.addThing(new Thing(R.raw.chef, R.raw.chef_sound, "mubiki", null, "munhu anobika chikafu"));
+        professionCategory.addThing(new Thing(R.raw.cut, R.raw.carpenter_sound, "muvezi", null, "munhu anoveza mapuranga"));
+        professionCategory.addThing(new Thing(R.raw.playing_music, R.raw.musician_sound, "muimbi", null, "munhu anoimba"));
+        professionCategory.addThing(new Thing(R.raw.pilot, R.raw.pilot_sound, "mutyairi", null, "munhu anotyaira ndege"));
 
         colorCategory.addThing(new Thing(R.raw.black_fluid, R.raw.black_sound, "tema", null, "ruvara ru-tema"));
         colorCategory.addThing(new Thing(R.raw.yellow_fluid, R.raw.yellow_sound, "yero", null, "ruvara rwe-yero"));
@@ -155,9 +153,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         relationsCategory.addThing(new Thing(R.raw.family, R.raw.family_sound, "mhuri", null, null));
         relationsCategory.addThing(new Thing(R.raw.mother_baby, R.raw.mother_sound, "amai nemwana", null, "mai vanozvara mwana"));
         relationsCategory.addThing(new Thing(R.raw.grandmother, R.raw.granny_sound, "mbuya", null,"amai vemubereki"));
-        relationsCategory.addThing(new Thing(R.raw.granddad, R.raw.granny_sound, "sekuru", null, "baba vemubereki"));
-        relationsCategory.addThing(new Thing(R.raw.father_children, R.raw.granny_sound, "baba nevana",null, null));
-        relationsCategory.addThing(new Thing(R.raw.children, R.raw.granny_sound, "vana",null, null));
+        relationsCategory.addThing(new Thing(R.raw.granddad, R.raw.grandad_sound, "sekuru", null, "baba vemubereki"));
+        relationsCategory.addThing(new Thing(R.raw.father_children, R.raw.father_sound, "baba nevana",null,"baba vanozvara vana"));
+        relationsCategory.addThing(new Thing(R.raw.children, R.raw.children_sound, "vana",null, null));
 
 
         learncategoryList.add(alphabetCategory);

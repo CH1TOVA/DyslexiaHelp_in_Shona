@@ -117,7 +117,7 @@ public class QuizCategoriesActivity extends AppCompatActivity implements Recycle
         numbersQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.number_3,"tatu" ));
         numbersQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.number_4,"ina"));
         numbersQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.number_5, "shanu"));
-        numbersQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.number_6, "nhanhatu"));
+        numbersQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.number_6, "tanhatu"));
         numbersQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.number_7, "nomwe"));
         numbersQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.number_8, "sere"));
         numbersQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.number_9, "pfumbamwe"));
