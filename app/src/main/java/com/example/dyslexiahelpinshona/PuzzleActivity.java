@@ -138,7 +138,7 @@ public class PuzzleActivity extends AppCompatActivity {
         Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, scaledBitmapWidth, scaledBitmapHeight, true);
         Bitmap croppedBitmap = Bitmap.createBitmap(scaledBitmap, abs(scaledBitmapLeft), abs(scaledBitmapTop), croppedImageWidth, croppedImageHeight);
 
-        // Calculate the with and height of the pieces
+        // Calculate the width and height of the pieces
         int pieceWidth = croppedImageWidth/cols;
         int pieceHeight = croppedImageHeight/rows;
 

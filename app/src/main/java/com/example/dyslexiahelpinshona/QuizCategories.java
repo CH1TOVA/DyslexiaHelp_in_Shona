@@ -48,14 +48,6 @@ public class QuizCategories {
         return quizQuestions.get(currentIndex);
     }
 
-    boolean hasNextQuiz(){
-        return currentIndex < quizQuestions.size()-1;
-    }
-
-    boolean hasPrevQuiz(){
-        return currentIndex > 0;
-    }
-
     public void goToFirstQuiz(){
         currentIndex=0;
     }

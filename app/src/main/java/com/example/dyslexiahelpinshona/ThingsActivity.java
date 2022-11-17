@@ -35,7 +35,7 @@ public class ThingsActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();//return the intent that started this activity
         int position = intent.getIntExtra("position", 0);
-        currentCategory = MainActivity.learncategoryList.get(position);
+        currentCategory = LearnCategoriesActivity.learncategoryList.get(position);
         currentCategory.goToFirstThing();
         setTheme(currentCategory.theme);
 

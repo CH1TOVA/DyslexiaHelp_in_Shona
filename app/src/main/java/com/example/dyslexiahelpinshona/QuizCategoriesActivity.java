@@ -81,7 +81,7 @@ public class QuizCategoriesActivity extends AppCompatActivity implements Recycle
                 Highscores.getHighscore(MySQLiteHelper.COLUMN_COLORS),
                 R.style.BlueTheme,
                 MySQLiteHelper.COLUMN_COLORS);
-        QuizCategories relationsQuizCategories = new QuizCategories("Hukama",
+        QuizCategories relationsQuizCategories = new QuizCategories(" Vanhu nehukama",
                 R.drawable.relations_quiz,
                 Highscores.getHighscore(MySQLiteHelper.COLUMN_RELATIONS),
                 R.style.PurpleTheme,
@@ -137,7 +137,7 @@ public class QuizCategoriesActivity extends AppCompatActivity implements Recycle
         verbQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.writing, "nyora"));
         verbQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.cycling, "chovha"));
         verbQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.carry, "takura"));
-        verbQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.dance, "tamba"));
+        verbQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.dancing, "tamba"));
         verbQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.applause, "uchira"));
 
         animalsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.cow,  "mombe"));
@@ -157,6 +157,7 @@ public class QuizCategoriesActivity extends AppCompatActivity implements Recycle
         animalsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.pig, "nguruve"));
         animalsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.rabbit, "tsuro"));
         animalsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.frog, "datya"));
+        animalsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.bee, "nyuchi"));
 
 
         professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.doctor, "chiremba"));
@@ -165,7 +166,10 @@ public class QuizCategoriesActivity extends AppCompatActivity implements Recycle
         professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.teacher,  "mudzidzisi"));
         professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.chef, "mubiki"));
         professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.cut,  "muvezi"));
-        professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.playing_music, "muimbi"));
+        professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.miner, "mukorokoza"));
+        professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.farmer, "murimi"));
+        professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.mechanic, "makanika"));
+        professionQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.plumber, "puramba"));
 
         colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.black_fluid, "tema"));
         colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.yellow_fluid, "yero"));
@@ -173,16 +177,23 @@ public class QuizCategoriesActivity extends AppCompatActivity implements Recycle
         colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.white_fluid, "chena"));
         colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.green_fluid, "girinhi"));
         colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.brown_fluid,  "bhurawuni"));
-        colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.grey_fluid,  "gireyi"));
+        colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.grey_fluid,  "pfumbu"));
         colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.purple_fluid,  "pepuru"));
+        colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.blue_fluid,  "bhuruu"));
+        colorQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.cream_fluid,  "kirimu"));
+
 
 
         relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.family,  "mhuri"));
-        relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.mother_baby, "amai nemwana"));
+        relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.mother_baby, "mai"));
         relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.grandmother,  "mbuya"));
         relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.granddad, "sekuru"));
         relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.father_children, "baba nevana"));
-        relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.children, "vana"));
+        relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.baby, "mwana"));
+        relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.boy, "mukomana"));
+        relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.girl, "musikana"));
+        relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.man, "murume"));
+        relationsQuizCategories.addQuizQuestion(new QuizQuestion(R.raw.woman_afn, "mukadzi"));
 
 
 
@@ -198,7 +209,7 @@ public class QuizCategoriesActivity extends AppCompatActivity implements Recycle
     private void initRecyclerView() {
 
         //Hooks and learnAdapter to convert the lists to views
-        recyclerView = (RecyclerView) findViewById(R.id.quizRecycler);
+        recyclerView = findViewById(R.id.quizRecycler);
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(RecyclerView.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);

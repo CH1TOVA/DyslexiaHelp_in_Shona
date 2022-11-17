@@ -22,7 +22,7 @@
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".HomeActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
@@ -46,7 +46,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LearnCategoriesActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
 

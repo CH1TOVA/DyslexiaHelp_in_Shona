@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient2"
-    tools:context=".HomeActivity">
+    tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
         android:id = "@+id/learn_card"
