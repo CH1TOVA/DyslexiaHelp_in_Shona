@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
         alphabetCategory.addThing(new Thing(R.raw.alphabt_a, R.raw.a_sound, "[a]","varamwana: a", "kategori : nzvovera" ));
         alphabetCategory.addThing(new Thing(R.raw.alphabet_b, R.raw.b_sound, "[ɓ]", "varamwana: b", "ba,be,bi,bo,bu"));
-        alphabetCategory.addThing(new Thing(R.raw.alphabet_c, R.raw.non_existent, "[t͡ʃ]", "varamwana: c", "cha,che,chi,cho,chu"));
+        alphabetCategory.addThing(new Thing(R.raw.alphabet_c, R.raw.ch_sound, "[t͡ʃ]", "varamwana: c", "cha,che,chi,cho,chu"));
         alphabetCategory.addThing(new Thing(R.raw.alphabet_d, R.raw.d_sound, "[ɗ]" , "varamwana: d", "da,de,di,do,du"));
         alphabetCategory.addThing(new Thing(R.raw.alphabet_e, R.raw.e_sound, "[e]", "varamwana: e", "kategori:nzvovera "));
         alphabetCategory.addThing(new Thing(R.raw.alphabet_f, R.raw.f_sound, "[f]", "varamwana: f", "fa,fe,fi,fo,fu"));

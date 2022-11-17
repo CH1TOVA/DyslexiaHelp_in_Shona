@@ -136,18 +136,18 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         // indexes [0, 1 , 2] to randomly fetch the QuizQuestion indexes:
         ArrayList<Integer> indexes = new ArrayList<>(Arrays.asList(0, 1, 2));
 //        set the animation question:
-      for (int i = 0; i < indexes.size(); i++) {
-          quizAnswer = quizQuestions.get(answers[i]);
-          indexes.remove(quizQuestions);
-      }
+//     for (int i = 0; i < indexes.size(); i++) {
+//          quizAnswer = quizQuestions.get(answers[i]);
+//      }
+//        indexes.remove(quizQuestions);
 
 //        }
         //a random index to set the animation question:
-//        int index = indexes.get(random.nextInt(indexes.size()));
-        //indexes.remove(quizQuestions.get(index));
+       int index = indexes.get(random.nextInt(indexes.size()));
+        indexes.remove(quizQuestions.get(index));
 
 //       quizAnswer = quizQuestions.get(answers[index]);
-//          indexes.remove(quizQuestions.get(index));
+//         indexes.remove(quizQuestions.get(index));
 //        set.remove(random.nextInt(quizQuestions.size()));
 //
         lottie.setVisibility(View.INVISIBLE);
