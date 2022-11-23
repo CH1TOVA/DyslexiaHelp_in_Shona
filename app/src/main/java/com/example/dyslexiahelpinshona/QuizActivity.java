@@ -108,7 +108,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         // if the quiz has just started
         if (questionNumber == 1) {
             scoreTextView.setText("Zvibodzwa: " + 0);
-        } else if (questionNumber > 10 || quizQuestions.size()==2) {
+        } else if (questionNumber > 9) {
             this.finish();
             Highscores.open(this);
             if (Highscores.setHighscore(currentQuizCategories.columnName, score))
@@ -135,19 +135,41 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         Integer[] answers = set.toArray(new Integer[set.size()]);
         // indexes [0, 1 , 2] to randomly fetch the QuizQuestion indexes:
         ArrayList<Integer> indexes = new ArrayList<>(Arrays.asList(0, 1, 2));
+//        set the animation question:
+//     for (int i = 0; i < indexes.size(); i++) {
+//          quizAnswer = quizQuestions.get(answers[i]);
+//      }
+//        indexes.remove(quizQuestions);
+
+//        }
         //a random index to set the animation question:
        int index = indexes.get(random.nextInt(indexes.size()));
-        quizAnswer = quizQuestions.get(answers[index]);
+        indexes.remove(quizQuestions.get(index));
 
+//       quizAnswer = quizQuestions.get(answers[index]);
+//         indexes.remove(quizQuestions.get(index));
+//        set.remove(random.nextInt(quizQuestions.size()));
+//
         lottie.setVisibility(View.INVISIBLE);
         lottie.setAnimation(quizAnswer.getLottieAnimationView());
         lottie.setVisibility(View.VISIBLE);
 
-        answer1.setText(quizQuestions.get(answers[0]).getText());
-        answer2.setText(quizQuestions.get(answers[1]).getText());
-        answer3.setText(quizQuestions.get(answers[2]).getText());
-        quizQuestions.remove(quizAnswer);
+        setRandomAnswer(answer1, indexes, answers);
+        setRandomAnswer(answer2, indexes, answers);
+        setRandomAnswer(answer3, indexes, answers);
+    }
 
+    private void setRandomAnswer(RadioButton button, ArrayList<Integer> indexes, Integer[] answers) {
+        // params:
+        // e.g., indexes = [0, 1, 2]
+        // e.g., answers [2, 6, 9]
+        Random r = new Random();
+        // random index from [0, 1, 2].
+        int index = indexes.get(r.nextInt(indexes.size()));
+        // e.g., remove the index 1 so it won't appear two times as answer
+        indexes.remove(Integer.valueOf(index));
+        // indexes = [0, 2]
+        button.setText(quizQuestions.get(answers[index]).getText());
     }
 
     @Override
